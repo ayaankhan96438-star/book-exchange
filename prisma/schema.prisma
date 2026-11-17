@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum BookCondition {
+  Good
+  Very_Good
+  Like_New
+}
+
+enum BookStatus {
+  available
+  reserved
+  taken
+}
+
+enum ReservationStatus {
+  pending
+  completed
+  cancelled
+  expired
+}
+
+model Book {
+  id           String            @id @default(cuid())
+  isbn         String?
+  title        String
+  author       String
+  genre        String
+  condition    BookCondition
+  coverUrl     String
+  status       BookStatus        @default(available)
+  createdAt    DateTime          @default(now())
+  reservations ReservationBook[]
+
+  @@index([status], map: "Book_status_idx")
+  @@index([status, createdAt])
+  @@index([genre])
+  @@index([title, author])
+}
+
+model Reservation {
+  id            String            @id @default(cuid())
+  name          String
+  phone         String
+  booksBringing Int
+  status        ReservationStatus @default(pending)
+  createdAt     DateTime          @default(now())
+  expiresAt     DateTime
+  books         ReservationBook[]
+
+  @@index([status, expiresAt])
+  @@index([phone])
+}
+
+model ReservationBook {
+  reservationId String
+  bookId        String
+  reservation   Reservation @relation(fields: [reservationId], references: [id], onDelete: Cascade)
+  book          Book        @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@id([reservationId, bookId])
+  @@index([bookId])
+}
+
+model Exchange {
+  id        String   @id @default(cuid())
+  date      DateTime @default(now())
+  bookCount Int
+  fee       Int      @default(100)
+
+  @@index([date])
+}
