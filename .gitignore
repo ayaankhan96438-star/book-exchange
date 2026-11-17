@@ -36,3 +36,4 @@ out/
 *.log
 fix-backup-*/
 
+.book-exchange-backup-*/

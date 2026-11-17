@@ -56,6 +56,8 @@ model Reservation {
   books         ReservationBook[]
 
   @@index([status, expiresAt])
+  @@index([status])
+  @@index([expiresAt])
   @@index([phone])
 }
 

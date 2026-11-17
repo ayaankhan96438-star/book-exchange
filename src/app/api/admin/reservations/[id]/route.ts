@@ -27,7 +27,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
       if (parsed.data.action === "add-books") {
         const additions = parsed.data.bookIds || [];
         if (!additions.length || new Set(additions).size !== additions.length) throw new Error("Choose at least one different available book.");
-        if (bookIds.length + additions.length > reservation.booksBringing) throw new Error(`1 book ke badle 1 book. The customer is bringing ${reservation.booksBringing} books, so they can take ${reservation.booksBringing} books total.`);
+        if (bookIds.length + additions.length > reservation.booksBringing) throw new Error(`One book in, one book out. The customer is bringing ${reservation.booksBringing} books, so they can take ${reservation.booksBringing} books total.`);
         if (additions.some((bookId) => bookIds.includes(bookId))) throw new Error("That book is already in this reservation.");
         const held = await tx.book.updateMany({ where: { id: { in: additions }, status: "available" }, data: { status: "reserved" } });
         if (held.count !== additions.length) throw new Error("One or more selected books are no longer available.");
@@ -36,7 +36,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
       }
 
       if (parsed.data.action === "complete") {
-        if (bookIds.length !== reservation.booksBringing) throw new Error(`1 book ke badle 1 book. This customer is bringing ${reservation.booksBringing} books but has ${bookIds.length} reserved. Match the counts before completing.`);
+        if (bookIds.length !== reservation.booksBringing) throw new Error(`One book in, one book out. This customer is bringing ${reservation.booksBringing} books but has ${bookIds.length} reserved. Match the counts before completing.`);
         const updated = await tx.book.updateMany({ where: { id: { in: bookIds }, status: "reserved" }, data: { status: "taken" } });
         if (updated.count !== bookIds.length) throw new Error("One or more reserved books are no longer marked reserved.");
         await tx.exchange.create({ data: { bookCount: bookIds.length, fee: 100 } });

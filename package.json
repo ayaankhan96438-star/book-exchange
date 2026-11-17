@@ -11,7 +11,8 @@
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "db:remove-legacy-fiction": "tsx scripts/remove-legacy-fiction.ts"
   },
   "dependencies": {
     "@prisma/client": "6.19.0",

@@ -7,7 +7,7 @@ import { AREA, BRAND_NAME } from "@/lib/config";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: `Browse Non-fiction Books | ${BRAND_NAME}`,
+  title: "Browse Non-fiction Books",
   description: `Browse non-fiction books available for local exchange through ${BRAND_NAME} in ${AREA}. Reserve online and arrange a public meetup over WhatsApp.`,
 };
 

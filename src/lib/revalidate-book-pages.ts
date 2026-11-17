@@ -1,8 +1,9 @@
 import { revalidatePath } from "next/cache";
 
-/** Invalidate all public pages whose output depends on book availability or reservations. */
+/** Invalidate every public page whose output depends on available books or exchanges. */
 export function revalidateBookPages() {
-  revalidatePath("/", "page");
-  revalidatePath("/catalog", "page");
+  revalidatePath("/");
+  revalidatePath("/catalog");
+  revalidatePath("/reserve");
   revalidatePath("/books/[id]", "page");
 }

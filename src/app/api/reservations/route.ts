@@ -13,7 +13,7 @@ const reservationSchema = z.object({
   message: "A book can only appear once in the reserve list.",
   path: ["bookIds"],
 }).refine((data) => data.bookIds.length <= data.booksBringing, {
-  message: "1 book ke badle 1 book. You cannot reserve more books than you are bringing.",
+  message: "One book in, one book out. You cannot reserve more books than you are bringing.",
   path: ["bookIds"],
 });
 

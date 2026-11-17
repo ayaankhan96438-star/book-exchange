@@ -19,15 +19,26 @@ export function ReserveProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved) setSelectedIds(JSON.parse(saved) as string[]);
+      if (saved) {
+        const parsed: unknown = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setSelectedIds(parsed.filter((item): item is string => typeof item === "string").slice(0, 10));
+        }
+      }
     } catch {
-      window.localStorage.removeItem(STORAGE_KEY);
+      // Storage may be disabled or contain stale data; the in-memory list still works.
+    } finally {
+      setReady(true);
     }
-    setReady(true);
   }, []);
 
   useEffect(() => {
-    if (ready) window.localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
+    if (!ready) return;
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
+    } catch {
+      // Keep the reserve list usable for this session when storage is unavailable.
+    }
   }, [ready, selectedIds]);
 
   const value = useMemo(() => ({

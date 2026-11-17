@@ -1,6 +1,12 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-  return ["", "/catalog", "/reserve", "/exchange-point"].map((path) => ({ url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency: path === "" ? "weekly" : "daily", priority: path === "" ? 1 : 0.7 }));
+  const baseUrl = SITE_URL.replace(/\/$/, "");
+  if (!baseUrl) return [];
+  return ["", "/catalog", "/reserve", "/exchange-point"].map((path) => ({
+    url: `${baseUrl}${path}`,
+    changeFrequency: path === "" ? "weekly" : "daily",
+    priority: path === "" ? 1 : 0.7,
+  }));
 }

@@ -32,5 +32,5 @@ export const sampleBooks: SampleBook[] = seeded.map((book, index) => ({
   condition: book[3],
   coverUrl: `https://covers.openlibrary.org/b/isbn/${book[4]}-M.jpg`,
   status: "available",
-  createdAt: new Date(Date.now() - index * 86400000).toISOString(),
+  createdAt: new Date(Date.parse("2026-01-01T00:00:00.000Z") - index * 86400000).toISOString(),
 }));
