@@ -9,14 +9,14 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
         <div>
           <div className="flex items-center gap-2 font-serif text-2xl font-bold"><BookOpen className="text-[#D7A979]" /> {BRAND_NAME}</div>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-[#D1C4B6]">A small, home-run non-fiction book exchange helping good books find their next reader. Browse, reserve, and meet us in person.</p>
+          <p className="mt-4 max-w-sm text-sm leading-7 text-[#D1C4B6]">A small, home-run book exchange helping good books find their next reader. Browse, reserve, and meet us in person.</p>
           <p className="mt-5 text-xs uppercase tracking-[.2em] text-[#D7A979]">One book in. One book out.</p>
         </div>
         <div>
           <h3 className="font-semibold">Exchange Point</h3>
           <div className="mt-4 space-y-3 text-sm text-[#D1C4B6]">
             <p className="flex gap-3"><MapPin size={18} className="shrink-0 text-[#D7A979]" /> <span>{ADDRESS}</span></p>
-            <p className="text-xs leading-6 text-[#B9AA9B]">Exact time is confirmed on WhatsApp. We do not deliver or courier books.</p>
+            <p className="text-xs leading-6 text-[#B9AA9B]">Open daily 10:00 AM–10:00 PM; closed Friday. In-person exchanges only; no delivery or courier.</p>
             <Link href="/exchange-point" className="inline-flex text-sm font-semibold text-[#E5C39C] hover:text-white">View directions</Link>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-[#B9AA9B]">© {new Date().getFullYear()} {BRAND_NAME}. In-person non-fiction book exchanges in Delhi.</div>
+      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-[#B9AA9B]">© {new Date().getFullYear()} {BRAND_NAME}. In-person book exchanges in Delhi.</div>
     </footer>
   );
 }

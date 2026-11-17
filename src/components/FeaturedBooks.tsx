@@ -8,7 +8,7 @@ export default function FeaturedBooks({ books }: { books: BookView[] }) {
     <section className="section-pad mx-auto max-w-7xl px-5 lg:px-8">
       <FadeIn>
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <div><p className="eyebrow">Recently listed</p><h2 className="section-title mt-3">Recently added non-fiction books</h2><p className="mt-3 text-sm text-[#786D62]">A few non-fiction reads waiting for their next reader.</p></div>
+          <div><p className="eyebrow">Recently listed</p><h2 className="section-title mt-3">Recently added books</h2><p className="mt-3 text-sm text-[#786D62]">A few great reads waiting for their next reader.</p></div>
           <Link href="/catalog" className="inline-flex items-center gap-2 text-sm font-bold text-[#8B5E3C] hover:text-[#684329]">View all books <ArrowRight size={16} /></Link>
         </div>
       </FadeIn>

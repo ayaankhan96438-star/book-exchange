@@ -4,9 +4,9 @@ const questions = [
   { q: "How many books can I bring?", a: "You can bring up to 10 books in one exchange. The number of books you take must match the number you bring." },
   { q: "What is the exchange fee?", a: "The fee is a flat Rs 100 per exchange, whether you exchange one book or ten. Pay in cash or by UPI when we meet." },
   { q: "What condition should my books be in?", a: "Books must be clean, readable, complete, and in good condition, with all pages present." },
-  { q: "Do you accept novels or story books?", a: "No. We accept non-fiction only, including self-help, finance, business, biography, history, science, health, and study books." },
+  { q: "What genres do you accept?", a: "We accept books across genres, including non-fiction and fiction." },
   { q: "How does reservation work?", a: "Add available books to your reserve list and submit your details. A successful reservation holds the selected books for 48 hours." },
-  { q: "Where do we meet?", a: "Exchanges take place in person at H6, Krishna Nagar, Delhi 110051. The exact time is confirmed on WhatsApp." },
+  { q: "Where do we meet?", a: "Exchanges take place in person at H6, Krishna Nagar, Delhi 110051. Open daily from 10:00 AM to 10:00 PM; closed on Fridays." },
   { q: "Do you deliver or courier books?", a: "No. We do not deliver or courier books. Every exchange happens in person at the exchange address." },
 ];
 

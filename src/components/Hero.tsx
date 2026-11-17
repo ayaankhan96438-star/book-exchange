@@ -11,8 +11,8 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#DFCBB5] bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[.16em] text-[#795337]"><Sparkles size={14} /> Give every book another chapter</div>
           <h1 className="font-serif text-5xl font-semibold leading-[1.06] tracking-tight text-[#2B2118] sm:text-6xl lg:text-7xl">Bring your books.<br /><span className="text-[#8B5E3C]">Take the same number.</span><br />Only Rs 100.</h1>
-          <p className="mt-6 max-w-xl text-base leading-8 text-[#74675A] sm:text-lg">Exchange non-fiction books with {BRAND_NAME}, a small home-run book exchange in {AREA}. Browse available books and arrange your in-person exchange with us on WhatsApp.</p>
-          <p className="mt-3 max-w-xl text-xs leading-6 text-[#837669]">We accept non-fiction only: self-help, finance, biography, history, study, and similar subjects. No novels or story books.</p>
+          <p className="mt-6 max-w-xl text-base leading-8 text-[#74675A] sm:text-lg">Exchange books with {BRAND_NAME}, a small home-run book exchange in {AREA}. Browse available books and arrange your in-person exchange with us on WhatsApp.</p>
+          <p className="mt-3 max-w-xl text-xs leading-6 text-[#837669]">Browse a growing collection across genres, from self-help and business to fiction and more.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/catalog" className="primary-btn">Browse books <ArrowRight size={17} /></Link>
             <Link href="/exchange-point" className="secondary-btn"><MapPin size={17} /> Exchange Point</Link>

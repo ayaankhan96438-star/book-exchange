@@ -5,7 +5,7 @@ import ExchangePointActions from "@/components/ExchangePointActions";
 
 export const metadata: Metadata = {
   title: { absolute: "Exchange Point" },
-  description: `Visit our in-person non-fiction book exchange at ${ADDRESS}. The exact time is confirmed on WhatsApp. No delivery or courier service.`,
+  description: `Visit our in-person book exchange at ${ADDRESS}. The exact time is confirmed on WhatsApp. No delivery or courier service.`,
   openGraph: {
     title: { absolute: "Exchange Point" },
     description: `In-person non-fiction book exchanges at ${ADDRESS}.`,
@@ -17,7 +17,7 @@ export default function ExchangePointPage() {
     <main className="mx-auto min-h-[65vh] max-w-6xl px-5 py-16 lg:px-8 lg:py-24">
       <p className="eyebrow">Meet in person</p>
       <h1 className="section-title mt-3">Exchange Point</h1>
-      <p className="mt-3 max-w-2xl text-sm leading-7 text-[#786D62]">Our home-run non-fiction book exchange is based in {AREA}. Exchanges happen in person at the address below. Exact time is confirmed on WhatsApp.</p>
+      <p className="mt-3 max-w-2xl text-sm leading-7 text-[#786D62]">Our home-run book exchange is based in {AREA}. Exchanges happen in person at the address below. Open daily from 10:00 AM to 10:00 PM. Closed on Fridays.</p>
 
       <div className="mt-9 grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
         <div className="space-y-5">
@@ -25,14 +25,14 @@ export default function ExchangePointPage() {
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#F1E4D3] text-[#8B5E3C]"><MapPin size={21} /></span>
             <h2 className="mt-4 font-serif text-xl font-semibold">Our address</h2>
             <p className="mt-2 text-base font-semibold leading-7 text-[#35281D]">{ADDRESS}</p>
-            <p className="mt-2 flex items-center gap-2 text-sm text-[#786D62]"><Clock3 size={16} /> Exact time is confirmed on WhatsApp</p>
+            <p className="mt-2 flex items-center gap-2 text-sm text-[#786D62]"><Clock3 size={16} /> 10:00 AM – 10:00 PM · Closed Friday</p>
             <p className="mt-3 text-sm leading-7 text-[#786D62]">We do not deliver books. Exchanges happen in person at this address.</p>
             <div className="mt-5"><ExchangePointActions /></div>
           </section>
           <section className="rounded-3xl bg-[#F7F0E3] p-6">
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-white text-[#8B5E3C]"><BookOpenCheck size={21} /></span>
             <h2 className="mt-4 font-serif text-xl font-semibold">Before you message us</h2>
-            <p className="mt-3 text-sm leading-7 text-[#66513C]">Please send us: 1) the names of the books you want, 2) the books you will exchange (names or clear photos). Books must be clean, with all pages present and in good condition. We accept non-fiction books only. Fee: Rs 100 per exchange, 1 book for 1 book.</p>
+            <p className="mt-3 text-sm leading-7 text-[#66513C]">Please send us: 1) the names of the books you want, 2) the books you will exchange (names or clear photos). Books must be clean, with all pages present and in good condition. We accept books across genres. Fee: Rs 100 per exchange, 1 book for 1 book.</p>
           </section>
         </div>
 

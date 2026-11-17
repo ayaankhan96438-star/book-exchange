@@ -5,7 +5,7 @@ import { Check, Copy, MapPinned, MessageCircle, Phone } from "lucide-react";
 import { ADDRESS, PHONE_NUMBER } from "@/lib/config";
 import { whatsappLink } from "@/lib/whatsapp";
 
-const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=H6+Krishna+Nagar+Delhi+110051";
+const directionsUrl = "https://www.google.com/maps/dir/28.6632453,77.2749852/codingbolt,+H6,+Block+H,+Krishna+Nagar,+Delhi,+110051/@28.6614437,77.2715343,15z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x390cfdc256fc3b7b:0xf7fed217f482e834!2m2!1d77.2840365!2d28.6576156!3e0?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D";
 
 export default function ExchangePointActions() {
   const [copied, setCopied] = useState(false);

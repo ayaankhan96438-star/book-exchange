@@ -7,8 +7,8 @@ import { AREA, BRAND_NAME } from "@/lib/config";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Browse Non-fiction Books",
-  description: `Browse non-fiction books available for local exchange through ${BRAND_NAME} in ${AREA}. Reserve online and arrange a public meetup over WhatsApp.`,
+  title: "Browse Books",
+  description: `Browse books available for local exchange through ${BRAND_NAME} in ${AREA}. Reserve online and arrange a public meetup over WhatsApp.`,
 };
 
 export default async function CatalogPage() {
@@ -24,8 +24,8 @@ export default async function CatalogPage() {
   }));
   return <main className="mx-auto min-h-[60vh] max-w-7xl px-5 py-12 lg:px-8">
     <p className="eyebrow">Browse the collection</p>
-    <h1 className="section-title mt-3">Explore non-fiction books</h1>
-    <p className="mt-3 max-w-2xl text-sm leading-7 text-[#786D62]">Find your next read, add it to your reserve list, and we will message you to arrange a public exchange. Only available non-fiction books appear here.</p>
+    <h1 className="section-title mt-3">Explore books</h1>
+    <p className="mt-3 max-w-2xl text-sm leading-7 text-[#786D62]">Find your next read, add it to your reserve list, and we will message you to arrange a public exchange. Available books across genres appear here.</p>
     <CatalogClient books={viewBooks} />
   </main>;
 }

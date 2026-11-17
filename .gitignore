@@ -37,3 +37,4 @@ out/
 fix-backup-*/
 
 .book-exchange-backup-*/
+.book-exchange-content-backup-*/

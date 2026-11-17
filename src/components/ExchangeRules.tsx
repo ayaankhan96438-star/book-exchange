@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 const rules = [
   { icon: Scale, title: "One book in, one book out", detail: "The number of books you bring must match the number you take." },
   { icon: HandCoins, title: "Rs 100 per exchange", detail: "One flat fee for the full exchange, paid in cash or by UPI when we meet." },
-  { icon: BookOpenCheck, title: "Good condition, non-fiction only", detail: "Books must be clean, complete, and readable. No novels or story books." },
+  { icon: BookOpenCheck, title: "Good condition books", detail: "Books must be clean, complete, and readable." },
   { icon: MapPin, title: "In-person exchange only", detail: "Meet us at H6, Krishna Nagar, Delhi 110051. No delivery or courier service." },
   { icon: Clock3, title: "48-hour hold, maximum 10 books", detail: "Online reservations last 48 hours. You can exchange up to 10 books per visit." },
 ];

@@ -14,13 +14,13 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "600", "
 
 export const metadata: Metadata = {
   ...(SITE_URL ? { metadataBase: new URL(SITE_URL) } : {}),
-  title: { default: `Non-fiction Book Exchange in ${AREA} | ${BRAND_NAME}`, template: `%s | ${BRAND_NAME}` },
+  title: { default: `Book Exchange in ${AREA} | ${BRAND_NAME}`, template: `%s | ${BRAND_NAME}` },
   description: `A home-run non-fiction book exchange in ${AREA}. Exchange one book for one book, pay Rs 100 in person, and meet at ${ADDRESS}. No delivery or courier service.`,
   openGraph: {
-    title: `Non-fiction Book Exchange in ${AREA} | ${BRAND_NAME}`,
-    description: `Browse non-fiction books, reserve your selection, and exchange in person at ${ADDRESS}. One book for one book; Rs 100 per exchange.`,
+    title: `Book Exchange in ${AREA} | ${BRAND_NAME}`,
+    description: `Browse books, reserve your selection, and exchange in person at ${ADDRESS}. One book for one book; Rs 100 per exchange.`,
     type: "website",
-    images: [{ url: "/og-book-exchange.png", width: 1200, height: 630, alt: `${BRAND_NAME} non-fiction book exchange in Krishna Nagar, Delhi` }],
+    images: [{ url: "/og-book-exchange.png", width: 1200, height: 630, alt: `${BRAND_NAME} book exchange in Krishna Nagar, Delhi` }],
   },
   twitter: { card: "summary_large_image", images: ["/og-book-exchange.png"] },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
@@ -30,7 +30,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: BRAND_NAME,
-  description: `Home-run non-fiction book exchange in ${AREA}. In-person exchanges only; no delivery or courier service.`,
+  description: `Home-run book exchange in ${AREA}. In-person exchanges only; no delivery or courier service.`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "H6, Krishna Nagar",
@@ -40,6 +40,9 @@ const localBusinessJsonLd = {
     addressCountry: "IN",
   },
   telephone: PHONE_NUMBER,
+  openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"], opens: "10:00", closes: "22:00" },
+  ],
   areaServed: { "@type": "City", name: CITY },
   sameAs: [INSTAGRAM_URL],
   ...(SITE_URL ? { url: SITE_URL } : {}),

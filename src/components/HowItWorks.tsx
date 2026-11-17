@@ -2,10 +2,10 @@ import { BookOpen, Coins, HandHeart, MapPin } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
 const steps = [
-  { n: "01", icon: HandHeart, title: "Choose your books", text: "Browse the available non-fiction collection and add the books you want to your reserve list." },
-  { n: "02", icon: BookOpen, title: "Bring the same number", text: "Bring the same number of clean, complete non-fiction books, up to 10 in one exchange." },
+  { n: "01", icon: HandHeart, title: "Choose your books", text: "Browse the available collection and add the books you want to your reserve list." },
+  { n: "02", icon: BookOpen, title: "Bring the same number", text: "Bring the same number of clean, complete books, up to 10 in one exchange." },
   { n: "03", icon: Coins, title: "Pay Rs 100", text: "Pay one flat exchange fee in cash or by UPI when we meet in person." },
-  { n: "04", icon: MapPin, title: "Meet at the exchange point", text: "Visit H6, Krishna Nagar, Delhi 110051. The exact time is confirmed on WhatsApp." },
+  { n: "04", icon: MapPin, title: "Meet at the exchange point", text: "Visit H6, Krishna Nagar, Delhi 110051. Open daily 10:00 AM–10:00 PM; closed Friday." },
 ];
 
 export default function HowItWorks() {
