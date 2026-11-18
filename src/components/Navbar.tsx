@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { BookOpen, Instagram, Menu, MessageCircle, X } from "lucide-react";
-import { BRAND_NAME, INSTAGRAM_URL } from "@/lib/config";
+import { Instagram, Menu, MessageCircle, X } from "lucide-react";
+import { INSTAGRAM_URL } from "@/lib/config";
 import { whatsappLink } from "@/lib/whatsapp";
 
 const links = [
@@ -17,9 +18,16 @@ export default function Navbar() {
   return (
     <header className="glass-nav sticky top-0 z-50 border-b border-[#E9DED0]/80">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#8B5E3C] text-white"><BookOpen size={21} /></span>
-          <span className="font-serif text-xl font-bold tracking-tight text-[#2B2118]">{BRAND_NAME}<span className="text-[#8B5E3C]">.</span></span>
+        <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)} aria-label="Book Exchange home">
+          <Image
+            src="/book-exchange-logo.webp"
+            alt="Book Exchange — Read, Share, Grow"
+            width={1800}
+            height={427}
+            priority
+            sizes="(max-width: 640px) 68vw, 270px"
+            className="h-[54px] w-auto max-w-[68vw] object-contain sm:h-[66px] sm:max-w-[270px]"
+          />
         </Link>
         <div className="hidden items-center gap-7 md:flex">
           {links.map((link) => <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-[#65584C] hover:text-[#8B5E3C]">{link.label}</Link>)}
